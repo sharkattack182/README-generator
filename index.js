@@ -20,7 +20,7 @@ inquirer.prompt([
     {
         type: "input",
         message: "Please add Usage Instructions",
-        name: "Usage"
+        name: "usage"
     },
     {
         type: "input",
@@ -30,7 +30,7 @@ inquirer.prompt([
     {
         type: "input",
         message: "Please add instructions for contributions.",
-        name: "constributing"
+        name: "contributing"
     },
     {
         type: "input",
@@ -45,8 +45,18 @@ inquirer.prompt([
 
 ]).then(answers => {
 
-    let readMe = JSON.stringify(answers);
-    return console.log(readMe);
+    let title = JSON.stringify(answers.title);
+    let description = JSON.stringify(answers.description);
+    let installation = JSON.stringify(answers.installation);
+    let usage = JSON.stringify(answers.usage);
+    let license = JSON.stringify(answers.license);
+    let contributing = JSON.stringify(answers.contributing);
+    let test = JSON.stringify(answers.test);
+    let questions = JSON.stringify(answers.questions);
+
+    
+    return console.log(JSON.stringify(title + description + installation + usage + license + contributing + test + questions));
+   
     // fs.writeFile("README.md", readMe, err => {
     //     if (err) {
     //         return console.log(err);
