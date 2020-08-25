@@ -1,6 +1,6 @@
 # readme-generator
 
-Description
+The read me generator is designed to create a custom readme.md document for any project. just open the generator in node and answer the prompts.
 
 ## Table of Contents
 * [Installation](https://github.com/sharkattack182/readme-generator#Installation)
