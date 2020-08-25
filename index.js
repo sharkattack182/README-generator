@@ -14,37 +14,44 @@ inquirer.prompt([
     },
     {
         type: "input",
-      message: "What is your user name?", // need to figure out input type
-      name: "table-of-contents"
+      message: "Please add installation instructions.", 
+      name: "installation"
     },
     {
         type: "input",
-        message: "What is the title of your project?",
-        name: "title"
+        message: "Please add Usage Instructions",
+        name: "Usage"
     },
     {
         type: "input",
-        message: "What is the title of your project?",
-        name: "title"
+        message: "Add any licensing here.",
+        name: "license"
+    },
+    {
+        type: "input",
+        message: "Please add instructions for contributions.",
+        name: "constributing"
+    },
+    {
+        type: "input",
+        message: "Please add testing instructions here.",
+        name: "test"
+    },
+    {
+        type: "input",
+        message: "Please add a method to contact you with any questions.",
+        name: "questions"
     },
 
 ]).then(answers => {
 
-    let readMe = "";
-    fs.writeFile("README.md", readMe, err => {
-        if (err) {
-            return console.log(err);
-        }
-    })
+    let readMe = JSON.stringify(answers);
+    return console.log(readMe);
+    // fs.writeFile("README.md", readMe, err => {
+    //     if (err) {
+    //         return console.log(err);
+    //     }
+    // })
 })
 
 
-// Title
-// Description
-// Table of Contents
-// Installation
-// Usage
-// License
-// Contributing
-// Tests
-// Questions
