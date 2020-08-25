@@ -13,12 +13,12 @@ Description
 
 ## Installation
 example text. need to figure out what i will put here.
-```node
+```
 open read me generator in node
 ```
 
 ## Usage
-```node
+```
 examples of code and the returns
 ```
 
