@@ -55,3 +55,7 @@ inquirer.prompt([
 })
 
 
+// so the idea is to take each item and isoalte it such as 
+// var title = answers.title then stringify it and add a # 
+// then add it all to a string im guessing and run that where 
+// readMe is in the writeFile function.
