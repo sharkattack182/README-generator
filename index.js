@@ -4,6 +4,16 @@ var fs = require("fs");
 inquirer.prompt([
     {
         type: "input",
+        message: "What is your GitHub username?",
+        name: "username"
+    },
+    {
+        type: "input",
+        message: "What is your email address?",
+        name: "email"
+    },
+    {
+        type: "input",
         message: "What is the title of your project?",
         name: "title"
     },
@@ -23,8 +33,9 @@ inquirer.prompt([
         name: "usage"
     },
     {
-        type: "input",
-        message: "Add any licensing here.",
+        type: "list",
+        message: "Please choose licenseing.",
+        choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"],
         name: "license"
     },
     {
@@ -45,23 +56,62 @@ inquirer.prompt([
 
 ]).then(answers => {
 
-    let title = JSON.stringify(answers.title);
-    let description = JSON.stringify(answers.description);
-    let installation = JSON.stringify(answers.installation);
-    let usage = JSON.stringify(answers.usage);
-    let license = JSON.stringify(answers.license);
-    let contributing = JSON.stringify(answers.contributing);
-    let test = JSON.stringify(answers.test);
-    let questions = JSON.stringify(answers.questions);
+    let title = answers.title;
+    let description = answers.description;
+    let installation = answers.installation;
+    let usage = answers.usage;
+    let license = answers.license;
+    let contributing = answers.contributing;
+    let test = answers.test;
+    let questions = answers.questions;
+    let email = answers.email;
+    let username = answers.username;
 
-    
-    return console.log(JSON.stringify(title + description + installation + usage + license + contributing + test + questions));
+
+ var stringAnswers = `
+ # ${title}
+
+ ${description}
+ 
+ ## Table of Contents
+ * [Installation](#Installation)
+ * [Usage](#Usage)
+ * [License](#License)
+ * [Contributing](#Contributing)
+ * [Tests](#Tests)
+ * [Questions](#Questions)
+ 
+ 
+ ## Installation
+ 
+ > ${installation}
+ 
+ 
+ ## Usage
+ 
+ > ${usage}
+ 
+ 
+ ## License
+ [${license}]  This project is covered by the ${license} license
+ 
+ ## Contributing
+ ${contributing}
+ 
+ ## Tests
+ ${test}
+
+ ## Questions
+ for any questions visit my GitHub [${username}](https://github.com/${username}).
+ or email me at ${email}.
+ `
+
    
-    // fs.writeFile("README.md", readMe, err => {
-    //     if (err) {
-    //         return console.log(err);
-    //     }
-    // })
+    fs.writeFile("README.md", stringAnswers, err => {
+        if (err) {
+            return console.log(err);
+        }
+    })
 })
 
 

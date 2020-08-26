@@ -3,24 +3,24 @@
 The read me generator is designed to create a custom readme.md document for any project. just open the generator in node and answer the prompts.
 
 ## Table of Contents
-* [Installation](https://github.com/sharkattack182/readme-generator#Installation)
-* [Usage](https://github.com/sharkattack182/readme-generator#Usage)
-* [License](https://github.com/sharkattack182/readme-generator#License)
-* [Contributing](https://github.com/sharkattack182/readme-generator#Contributing)
-* [Tests](https://github.com/sharkattack182/readme-generator#Tests)
-* [Questions](https://github.com/sharkattack182/readme-generator#Questions)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [License](#License)
+* [Contributing](#Contributing)
+* [Tests](#Tests)
+* [Questions](#Questions)
 
 
 ## Installation
 example text. need to figure out what i will put here.
-```
-open read me generator in node
-```
+
+> open read me generator in node
+
 
 ## Usage
-```
-examples of code and the returns
-```
+
+> examples of code and the returns
+
 
 ## License
 [Sharkattack182](https://github.com/sharkattack182)
