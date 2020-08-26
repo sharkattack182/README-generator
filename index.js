@@ -48,12 +48,7 @@ inquirer.prompt([
         message: "Please add testing instructions here.",
         name: "test"
     },
-    {
-        type: "input",
-        message: "Please add a method to contact you with any questions.",
-        name: "questions"
-    },
-
+    
 ]).then(answers => {
 
     let title = answers.title;
@@ -63,12 +58,12 @@ inquirer.prompt([
     let license = answers.license;
     let contributing = answers.contributing;
     let test = answers.test;
-    let questions = answers.questions;
     let email = answers.email;
     let username = answers.username;
 
 
  var stringAnswers = `
+ #  ![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg) ${title}
  # ${title}
 
  ${description}
